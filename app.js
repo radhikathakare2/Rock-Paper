@@ -49,7 +49,6 @@ function checkRock(userChoice, compChoice){
         result.style.display = 'flex';
         result.style.alignItems = 'center';
         result.style.justifyContent = 'center';
-        
         result.innerHTML = `YOU WIN! <br> ${userChoice} beats ${compChoice}`;
         result.style.backgroundColor = "green";
         restartBtn.style.display = 'block';
@@ -108,6 +107,7 @@ function checkScissors(userChoice, compChoice){
 moves.forEach((move) => {
     move.addEventListener("click", () => {
         pym.style.animation = "none";
+        result.style.animation = "pulse 1.5s 2 ease-in-out;"
         const userChoice = move.getAttribute("id");
         play(userChoice);
     })
@@ -117,7 +117,7 @@ function draw(userChoice, compChoice){
     result.style.display = 'flex';
     result.style.alignItems = 'center';
     result.style.justifyContent = 'center';
-    result.innerHTML = `Draw! <br> ${userChoice} beats ${compChoice}`;
+    result.innerHTML = "Draw!";
     restartBtn.style.display = 'block';
 }
 
